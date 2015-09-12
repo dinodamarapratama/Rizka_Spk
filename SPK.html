@@ -27,24 +27,24 @@
 <style>
 
 label.btn span {
-  font-size: 14px ;
+  font-size: 17px ;
 }
 
 label input[type="radio"] ~ i.fa.fa-circle-o{
     color: #c8c8c8;    display: inline;
-	font-size: 14px;
+	font-size: 20px;
 }
 label input[type="radio"] ~ i.fa.fa-check-circle-o{
     display: none;
-	font-size: 14px;
+	font-size: 20px;
 }
 label input[type="radio"]:checked ~ i.fa.fa-circle-o{
     display: none;
-	font-size: 14px;
+	font-size: 20px;
 }
 label input[type="radio"]:checked ~ i.fa.fa-check-circle-o{
     color: #7AA3CC;    display: inline;
-	font-size: 14px;
+	font-size: 20px;
 }
 label:hover input[type="radio"] ~ i.fa {
 color: #7AA3CC;
@@ -97,8 +97,7 @@ box-shadow: none;
  var daftar_penyakit =
  [{nama:"P01", id:[1,4,5,14,16,20,21,22]},
   {nama:"P02", id:[1,2,3,6,7,8,9,10,11,12,13,15,17,18,19] },
-  {nama:"P03", id:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]},
-  {nama:"P04", id:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}];  
+  {nama:"P03", id:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]}];  
  
  var gejala1 = 0;
  var gejala2 = 0;
@@ -211,9 +210,7 @@ box-shadow: none;
             document.getElementById('hasil').innerHTML = "Anak anda menderita penyakit <b>Combined  Type</b>";
         };
 		
-		if (hasil == 'P04') {
-            document.getElementById('hasil').innerHTML = "Anak anda tidak menderita penyakit <b>ADHD</b>";
-        };
+	
 		
 
    }

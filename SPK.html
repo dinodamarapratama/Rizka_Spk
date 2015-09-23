@@ -3,101 +3,24 @@
 <html>
 <head>
 <title></title>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--webfont-->
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300|Open+Sans:300italic,400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
-<!--//webfont-->
-<!--Animation-->
 <script src="js/wow.min.js"></script>
 <link href="css/animate.css" rel='stylesheet' type='text/css' />
 <script>
 	new WOW().init();
 </script>
-
-<script type="text/javascript"src="js/lodash.min.js"></script>
-<script src="js/jquery.bootpag.min.js"></script>
-<link href="css/font-awesome.css" rel="stylesheet" /> 
-<style>
-
-label.btn span {
-  font-size: 17px ;
-}
-
-label input[type="radio"] ~ i.fa.fa-circle-o{
-    color: #c8c8c8;    display: inline;
-	font-size: 20px;
-}
-label input[type="radio"] ~ i.fa.fa-check-circle-o{
-    display: none;
-	font-size: 20px;
-}
-label input[type="radio"]:checked ~ i.fa.fa-circle-o{
-    display: none;
-	font-size: 20px;
-}
-label input[type="radio"]:checked ~ i.fa.fa-check-circle-o{
-    color: #7AA3CC;    display: inline;
-	font-size: 20px;
-}
-label:hover input[type="radio"] ~ i.fa {
-color: #7AA3CC;
-}
-
-
-
-div[data-toggle="buttons"] label.active{
-    color: #000;
-}
-
-div[data-toggle="buttons"] label {
-display: inline-block;
-padding: 6px 12px;
-margin-bottom: 0;
-font-size: 14px;
-font-weight: normal;
-line-height: 2em;
-text-align: left;
-white-space: nowrap;
-vertical-align: top;
-cursor: pointer;
-background-color: none;
-border: 0px solid 
-#c8c8c8;
-border-radius: 3px;
-color: #000;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
--o-user-select: none;
-user-select: none;
-}
-
-div[data-toggle="buttons"] label:hover {
-color: #7AA3CC;
-}
-
-div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active {
--webkit-box-shadow: none;
-box-shadow: none;
-}
-
-
-
-</style>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript"src="js/underscore-min.js"></script>
+<script type="text/javascript" src="training.json"></script>
+<script type="text/javascript" src="js/id3.js"></script>
 <script>
    
- var input = [];
- var daftar_penyakit =
- [{nama:"P01", id:[1,4,5,14,16,20,21,22]},
-  {nama:"P02", id:[1,2,3,6,7,8,9,10,11,12,13,15,17,18,19] },
-  {nama:"P03", id:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]}];  
+
  
  var gejala1 = 0;
  var gejala2 = 0;
@@ -129,90 +52,86 @@ box-shadow: none;
 	if($('[name="gejala1"]:checked').val() == 0 ) { gejala1 = 0 }
 	if($('[name="gejala2"]:checked').val() == 2 ) { gejala2 = 2 }
 	if($('[name="gejala2"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala3"]:checked').val() == 3 ) { gejala2 = 3 }
-	if($('[name="gejala3"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala4"]:checked').val() == 4 ) { gejala2 = 4 }
-	if($('[name="gejala4"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala5"]:checked').val() == 5 ) { gejala2 = 5 }
-	if($('[name="gejala5"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala6"]:checked').val() == 6 ) { gejala2 = 6 }
-	if($('[name="gejala6"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala7"]:checked').val() == 7 ) { gejala2 = 7 }
-	if($('[name="gejala7"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala8"]:checked').val() == 8 ) { gejala2 = 8 }
-	if($('[name="gejala8"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala9"]:checked').val() == 9 ) { gejala2 = 9 }
-	if($('[name="gejala9"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala10"]:checked').val() == 10 ) { gejala2 = 10 }
-	if($('[name="gejala10"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala11"]:checked').val() == 11 ) { gejala2 = 11 }
-	if($('[name="gejala11"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala12"]:checked').val() == 12 ) { gejala2 = 12 }
-	if($('[name="gejala12"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala13"]:checked').val() == 13 ) { gejala2 = 13 }
-	if($('[name="gejala13"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala14"]:checked').val() == 14 ) { gejala2 = 14 }
-	if($('[name="gejala14"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala15"]:checked').val() == 15 ) { gejala2 = 15 }
-	if($('[name="gejala15"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala16"]:checked').val() == 16 ) { gejala2 = 16 }
-	if($('[name="gejala16"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala17"]:checked').val() == 17 ) { gejala2 = 17 }
-	if($('[name="gejala17"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala18"]:checked').val() == 18 ) { gejala2 = 18 }
-	if($('[name="gejala18"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala19"]:checked').val() == 19 ) { gejala2 = 19 }
-	if($('[name="gejala19"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala20"]:checked').val() == 20 ) { gejala2 = 20 }
-	if($('[name="gejala20"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala21"]:checked').val() == 21 ) { gejala2 = 21 }
-	if($('[name="gejala21"]:checked').val() == 0 ) { gejala2 = 0 }
-	if($('[name="gejala22"]:checked').val() == 22 ) { gejala2 = 22 }
-	if($('[name="gejala22"]:checked').val() == 0 ) { gejala2 = 0 }
-	
+	if($('[name="gejala3"]:checked').val() == 3 ) { gejala3 = 3 }
+	if($('[name="gejala3"]:checked').val() == 0 ) { gejala3 = 0 }
+	if($('[name="gejala4"]:checked').val() == 4 ) { gejala4 = 4 }
+	if($('[name="gejala4"]:checked').val() == 0 ) { gejala4 = 0 }
+	if($('[name="gejala5"]:checked').val() == 5 ) { gejala5 = 5 }
+	if($('[name="gejala5"]:checked').val() == 0 ) { gejala5 = 0 }
+	if($('[name="gejala6"]:checked').val() == 6 ) { gejala6 = 6 }
+	if($('[name="gejala6"]:checked').val() == 0 ) { gejala6 = 0 }
+	if($('[name="gejala7"]:checked').val() == 7 ) { gejala7 = 7 }
+	if($('[name="gejala7"]:checked').val() == 0 ) { gejala7 = 0 }
+	if($('[name="gejala8"]:checked').val() == 8 ) { gejala8 = 8 }
+	if($('[name="gejala8"]:checked').val() == 0 ) { gejala8 = 0 }
+	if($('[name="gejala9"]:checked').val() == 9 ) { gejala9 = 9 }
+	if($('[name="gejala9"]:checked').val() == 0 ) { gejala9 = 0 }
+	if($('[name="gejala10"]:checked').val() == 10 ) { gejala10 = 10 }
+	if($('[name="gejala10"]:checked').val() == 0 ) { gejala10 = 0 }
+	if($('[name="gejala11"]:checked').val() == 11 ) { gejala11 = 11 }
+	if($('[name="gejala11"]:checked').val() == 0 ) { gejala11 = 0 }
+	if($('[name="gejala12"]:checked').val() == 12 ) { gejala12 = 12 }
+	if($('[name="gejala12"]:checked').val() == 0 ) { gejala12 = 0 }
+	if($('[name="gejala13"]:checked').val() == 13 ) { gejala3 = 13 }
+	if($('[name="gejala13"]:checked').val() == 0 ) { gejala13 = 0 }
+	if($('[name="gejala14"]:checked').val() == 14 ) { gejala14 = 14 }
+	if($('[name="gejala14"]:checked').val() == 0 ) { gejala14 = 0 }
+	if($('[name="gejala15"]:checked').val() == 15 ) { gejala15 = 15 }
+	if($('[name="gejala15"]:checked').val() == 0 ) { gejala15 = 0 }
+	if($('[name="gejala16"]:checked').val() == 16 ) { gejala16 = 16 }
+	if($('[name="gejala16"]:checked').val() == 0 ) { gejala16 = 0 }
+	if($('[name="gejala17"]:checked').val() == 17 ) { gejala17 = 17 }
+	if($('[name="gejala17"]:checked').val() == 0 ) { gejala17 = 0 }
+	if($('[name="gejala18"]:checked').val() == 18 ) { gejala18 = 18 }
+	if($('[name="gejala18"]:checked').val() == 0 ) { gejala18 = 0 }
+	if($('[name="gejala19"]:checked').val() == 19 ) { gejala19 = 19 }
+	if($('[name="gejala19"]:checked').val() == 0 ) { gejala19 = 0 }
+	if($('[name="gejala20"]:checked').val() == 20 ) { gejala20 = 20 }
+	if($('[name="gejala20"]:checked').val() == 0 ) { gejala20 = 0 }
+	if($('[name="gejala21"]:checked').val() == 21 ) { gejala21 = 21 }
+	if($('[name="gejala21"]:checked').val() == 0 ) { gejala21 = 0 }
+	if($('[name="gejala22"]:checked').val() == 22 ) { gejala22 = 22 }
+	if($('[name="gejala22"]:checked').val() == 0 ) { gejala22 = 0 }
 
-	
 	}
 	
 	
-	function hasil() {
-	   input = [];
-       input.push(gejala1,gejala2,gejala3,gejala4,gejala5,gejala6,gejala7,gejala8,gejala9,gejala10,gejala11,gejala12,gejala13,gejala14,gejala15,gejala16,gejala17,gejala18,gejala19,gejala20,gejala21,gejala22);
-		console.log(input);
-		var box = document.getElementById('box');
-        box.style.display = (box.style.display != 'none') ? 'visible' : '';
+	function diagnosa() {
+    data = _(data);
+	console.log(data);
+	var features = ['G1','G2','G3','G4','G5','G6','G7','G8','G9','G10','G11','G12','G13','G14','G15','G16','G17','G18','G19','G20','G21','G22'];            
+    var samples = [
+	 {
+    "G1": gejala1,
+    "G2": gejala2,
+    "G3": gejala3,
+    "G4": gejala4,
+    "G5": gejala5,
+    "G6": gejala6,
+    "G7": gejala7,
+    "G8": gejala8,
+    "G9": gejala9,
+    "G10": gejala10,
+    "G11": gejala11,
+    "G12": gejala12,
+    "G13": gejala13,
+    "G14": gejala14,
+    "G15": gejala15,
+    "G16": gejala16,
+    "G17": gejala17,
+    "G18": gejala18,
+    "G19": gejala19,
+    "G20": gejala20,
+    "G21": gejala21,
+    "G22": gejala22
+  }];
 
-	        var arrayPull = [];
-            var result=_.filter(daftar_penyakit, function(obj){
-			for(var i=0;i<input.length ;i++) {
-            if(_.includes(obj.id,input[i])){
-			console.log(obj.id,input[i]);
-			arrayPull.push(obj.nama);
-			console.log(arrayPull);
-            }
-			
-			console.log(_.chain(arrayPull).countBy().pairs().max(_.last).value());
-			hasil = (_.chain(arrayPull).countBy().pairs().max(_.last).value()[0]);
-			
-			} 
-          });
-		
-		    
-        if (hasil == 'P01') {
-		    
-            document.getElementById('hasil').innerHTML = "Anak anda menderita penyakit <b>Predominately Inattentive Type</b>";
-        };
-        if (hasil == 'P02') {
-            document.getElementById('hasil').innerHTML = "Anak anda menderita penyakit <b>Predominately Hyperactive-Implusive Type</b>";
-        };
-
-        if (hasil == 'P03') {
-            document.getElementById('hasil').innerHTML = "Anak anda menderita penyakit <b>Combined  Type</b>";
-        };
-		
+	   
+           var testModel = id3(data,'type',features);
+           renderSamples(samples,$("#samples"),testModel,'type',features);
+           renderTrainingData(data,$("#training"),'type',features);
+           console.log(calcError(samples,testModel,'type'));
 	
-		
-
    }
  			
           
@@ -312,417 +231,476 @@ box-shadow: none;
 	<div class ="contact-section">
 			<div class="container">
 			<div id="about" class="service-section">
-   
+ 
+
 <div class="container">
-
-
-<div style="display:none" class="row">
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-pills">
+              <li class="active">
+                <a data-toggle="tab" href="#home-pills">Test 1</a>
+              </li>
+              <li>
+                <a data-toggle="tab" href="#t1">Test 2</a>
+              </li>
+              <li>
+                <a data-toggle="tab" href="#t2">Test 3</a>
+              </li>
+              <li>
+                <a data-toggle="tab" href="#diagnosa">Hasil</a>
+              </li>
+            </ul><!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="home-pills">
+                <br>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    Test 1
+                  </div><!-- /.panel-heading -->
+                  <div class="panel-body">
+                    <br>
+                    
+<div  class="row">
     <div id="page1" class="col-xs-12">
 	<p><strong>1.</strong> Apakah anak anda sering gagal memberikan perhatian pada hal kecil ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala1" onclick="test_gejala();" value="1" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala1" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page2" class="col-xs-12">
 	<p><strong>2.</strong> Apakah anak anda sering tidak bisa diam ketika bermain atau melakukan kegiatan waktu luang ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala2" onclick="test_gejala();" value="2" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala2" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page3" class="col-xs-12">
 	<p><strong>3.</strong> Apakah anak anda sering berlari kesana kemari atau banyak memanjat ketika diharapkan untuk tetap duduk tenang ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala3" onclick="test_gejala();" value="3" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala3" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div> <br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page4" class="col-xs-12">
 	<p><strong>4.</strong> Apakah anak anda sering mudah terganggu rangsangan dari luar ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala4" onclick="test_gejala();" value="4" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala4" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page5" class="col-xs-12">
 	<p><strong>5.</strong> Apakah anak anda sering tidak mengikuti instruksi dan gagal menyelesaikan satu tugas ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala5" onclick="test_gejala();" value="5" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala5" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page6" class="col-xs-12">
 	<p><strong>6.</strong> Apakah anak anda sering sulit untuk menunggu giliran ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala6" onclick="test_gejala();" value="6" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala6" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page7" class="col-xs-12">
 	<p><strong>7.</strong> Apakah anak anda sering menjawab pertanyaan sebelum pertanyaan selesai ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala7" onclick="test_gejala();" value="7" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala7" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
-  
-  
-  <div style="display:none" class="row">
+  </div><br>
+                  </div><!-- /.panel-body -->
+                </div>
+              </div>
+              <div class="tab-pane fade" id="t1">
+                <br>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    Test 2
+                  </div><!-- /.panel-heading -->
+                  <div class="panel-body">
+                    <br>
+					<div  class="row">
     <div id="page8" class="col-xs-12">
 	<p><strong>8.</strong> Apakah anak anda sering berbicara terlalu banyak(cerewet) ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala8" onclick="test_gejala();" value="8" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala8" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page9" class="col-xs-12">
 	<p><strong>9.</strong> Apakah anak anda sering bergerak terlalu banyak sehingga terlihat seperti digerakan oleh sebuah 'motor' ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala9" onclick="test_gejala();" value="9" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala9" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page10" class="col-xs-12">
 	<p><strong>10.</strong> Apakah anak anda sering menjadi gelisah saat duduk, tangan dan kaki sering tidak bisa diam ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala10" onclick="test_gejala();" value="10" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala10" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page11" class="col-xs-12">
 	<p><strong>11.</strong> Apakah anak anda sering melanggar peraturan ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala11" onclick="test_gejala();" value="11" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala11" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page12" class="col-xs-12">
 	<p><strong>12.</strong> Apakah anak anda sering meninggalkan tempat duduknya diruang kelas atau dalam situasi lainnya ketika diharapkan tetap duduk tenang ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala12" onclick="test_gejala();" value="12" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala12" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page13" class="col-xs-12">
 	<p><strong>13.</strong> Apakah anak anda lebih mudah marah (dibanding anak seusianya) ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala13" onclick="test_gejala();" value="13" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala13" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page14" class="col-xs-12">
 	<p><strong>14.</strong> Apakah anak anda sering seakan tidak mendengar ketika orang berbicara secara langsung ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala14" onclick="test_gejala();" value="14" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala14" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page15" class="col-xs-12">
 	<p><strong>15.</strong> Apakah anak anda sering menyela orang lain, baik dalam permainan maupun pembicaraan ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala15" onclick="test_gejala();" value="15" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala15" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
-  
-  <div style="display:none" class="row">
+                   
+                  </div><!-- /.panel-body -->
+                </div>
+              </div>
+              <div class="tab-pane fade" id="t2">
+                <br>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    Test 3
+                  </div><!-- /.panel-heading -->
+                  <div class="panel-body">
+                   <br>
+				   <div  class="row">
     <div id="page16" class="col-xs-12">
 	<p><strong>16.</strong> Apakah anak anda sering mengalami kesulitan untuk tetap memperhatikan dalam kegiatan tugas atau permainan ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala16" onclick="test_gejala();" value="16" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala16" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page17" class="col-xs-12">
 	<p><strong>17.</strong> Apakah anak anda banyak mengalami rasa khawatir dan takut ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala17" onclick="test_gejala();" value="17" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala17" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page18" class="col-xs-12">
 	<p><strong>18.</strong> Apakah anak anda terlihat sangat pemalu dan menarik diri ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala18" onclick="test_gejala();" value="18" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala18" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page19" class="col-xs-12">
 	<p><strong>19.</strong> Apakah anak anda mengalami kecemasan pada situasi yang baru atau tidak familiar ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala19" onclick="test_gejala();" value="19" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala19" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page20" class="col-xs-12">
 	<p><strong>20.</strong> Apakah anak anda sering menghindar, tidak suka atau enggan terlibat dalam tugas yang menuntut usaha mental yang terus menerus ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala20" onclick="test_gejala();" value="20" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala20" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page21" class="col-xs-12">
 	<p><strong>21.</strong> Apakah anak anda sering lupa terhadap aktivitas sehari-hari ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala21" onclick="test_gejala();" value="21" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala21" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
   
-  <div style="display:none" class="row">
+  <div  class="row">
     <div id="page22" class="col-xs-12">
-	<p><strong>22.</strong> Apakah kamu sakit ? </p>
+	<p><strong>22.</strong> Apakah anak anda sakit ? </p>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
+        
           <input type="radio" name="gejala22" onclick="test_gejala();" value="22" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i> <span> Ya</span>
-        </label>
-        <label class="btn">
+		   <span> Ya</span><br>
+        
+        
           <input type="radio"  name="gejala22" onclick="test_gejala();" value="0" >
-		  <i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Tidak</span>
-        </label>
+		  <span> Tidak</span>
+        
       </div>
     </div>
-  </div>
+  </div><br>
   
-  
-  <div style="display:none" class="row">
-    <div id="page23" class="col-xs-12">
-     <a href="#" onclick="hasil()" class="myButton">Diagnosa Penyakit</a> <br>	<br>
-	 <a href="#" onclick="location.reload()" class="myButton">Ulangi</a>
-    </div>
-	
+				   
+                  </div><!-- /.panel-body -->
+                </div>
+              </div>
+              
+			  
+              <div class="tab-pane fade" id="diagnosa">
+                <br>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    Hasil Diagnosa
+                  </div><!-- /.panel-heading -->
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-xs-12" id="page39">
+                        <a class="myButton" href="#training" onclick="diagnosa()">Diagnosa Penyakit</a><br>
+                        <br>
+                        <a class="myButton" href="#" onclick="location.reload()">Ulangi</a>
+						
+                        <div id="data-container">
+                          <div>
+                            <br>
+                            <p id="dataSample"></p>
+                            <table id='samples' style="display:none"></table>
+                            <div class=" wow zoomInRight animated" id="box" style="border-radius: 0px;border: 2px solid #3498db;width: 100%;display:none">
+							<p style="margin:10px" id="hasil"></p>
+							</div>
+                            <h3 style="display:none">
+                              Training Data
+                            </h3>
+                            <table id='training' style="display:none"></table>
+                          </div>
+                        </div>
+						
+                      </div>
+                      
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div>
+              </div>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel -->
+        </div>
+      </div>
 
-  </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-				<div id="content" class="row">
-				<a href="#" onclick="start()" class="myButton">Mulai</a>
-				</div>	 
-				
-                <div id="page-selection" style="display:none"></div>
-		
-
-
-    </div>
-	
-	
    
-   <div id="box" class=" wow zoomInRight animated" style="border-radius: 0px;border: 2px solid #3498db;width: 100%;display:none ">
-   <p style="margin-left:10px" id="hasil"></p>
-   </div>
-
+   
     
 
     
@@ -765,29 +743,6 @@ box-shadow: none;
 
 
 	
-     <script>
-
-        $('#page-selection').bootpag({
-            total: 23,
-			page: 1,
-            maxVisible: 4,
-			leaps: false,
-             disabledClass: 'disabled',
-    next: 'next',
-   prev: null
-        }).on("page", function(event, num){
-             $("#content").html($('#page' + num).html()); // some ajax content loading...
-			 
-			
-        });
-		
-		function start(){
-		
-		 $("#content").html($('#page1').html());
-		 var page_selection = document.getElementById('page-selection');
-           page_selection.style.display = (page_selection.style.display != 'none') ? 'visible' : '';
-		
-		}
-    </script>		
+    		
 </body>
 </html>
